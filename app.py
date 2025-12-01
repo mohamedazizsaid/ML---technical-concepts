@@ -33,7 +33,6 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, PolynomialFeatur
 from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report, 
                              roc_curve, auc, f1_score, mean_squared_error, r2_score,
                              silhouette_score, jaccard_score, mean_absolute_error)
-# Dans la section des imports (ligne ~40), ajoutez :
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import GradientBoostingClassifier
 # Modèles de Régression
@@ -97,26 +96,7 @@ try:
     print("✓ Dataset chargé depuis le fichier local")
 except FileNotFoundError:
     print("⚠ Fichier non trouvé. Création d'un dataset d'exemple...")
-    # Création d'un dataset d'exemple pour la démonstration
-    np.random.seed(42)
-    n_samples = 300
-    
-    df = pd.DataFrame({
-        'Timestamp': pd.date_range(start='2024-01-01', periods=n_samples, freq='H'),
-        'Choose your gender': np.random.choice(['Male', 'Female'], n_samples),
-        'Age': np.random.randint(18, 26, n_samples),
-        'What is your course?': np.random.choice(['Engineering', 'Business', 'Science', 'Arts'], n_samples),
-        'Your current year of Study': np.random.choice(['Year 1', 'Year 2', 'Year 3', 'Year 4'], n_samples),
-        'What is your CGPA?': np.random.uniform(2.0, 4.0, n_samples),
-        'Marital status': np.random.choice(['Single', 'Married'], n_samples, p=[0.9, 0.1]),
-        'Do you have Depression?': np.random.choice(['Yes', 'No'], n_samples),
-        'Do you have Anxiety?': np.random.choice(['Yes', 'No'], n_samples),
-        'Do you have Panic attack?': np.random.choice(['Yes', 'No'], n_samples),
-        'Did you seek any specialist for a treatment?': np.random.choice(['Yes', 'No'], n_samples, p=[0.3, 0.7])
-    })
-    df.to_csv('data/Student Mental health.csv', index=False)
-    print("✓ Dataset d'exemple créé et sauvegardé")
-
+   
 print(f"\n✓ Dataset chargé: {df.shape[0]} lignes, {df.shape[1]} colonnes\n")
 
 # Affichage des premières lignes
@@ -396,55 +376,255 @@ if numeric_columns_for_corr:
 else:
     print("⚠ Aucune colonne numérique disponible pour l'analyse de corrélation")
     correlation_matrix = pd.DataFrame()
+# =============================================================================
+# 4.1 Normalisation et Vérification de Data Leakage 
+# =============================================================================
+print("\n--- 4.1 Normalisation et Vérification de Data Leakage ---\n")
 
-# 4.7 Normalisation des données
-print("\n--- 4.7 Normalisation des données ---")
+# IMPORTANT: Vérifier d'abord si les données corrigées existent
+import os
 
-# CORRECTION: Convertir les colonnes non numériques en numériques
-X_numeric = X.copy()
-import re
-# Fonction pour convertir CGPA en numérique
-def convert_cgpa_to_numeric(cgpa_value):
-    if isinstance(cgpa_value, (int, float)):
-        return float(cgpa_value)
-    elif isinstance(cgpa_value, str):
-        # Extraire le premier nombre (ex: "3.00 - 3.49" -> 3.00)
-        match = re.search(r'(\d+\.\d+)', str(cgpa_value))
-        if match:
-            return float(match.group(1))
-        else:
+corrected_data_exists = (
+    os.path.exists('data/X_scaled_corrected.csv') and
+    os.path.exists('data/y_classification_corrected.csv') and
+    os.path.exists('data/y_regression_corrected.csv')
+)
+
+if corrected_data_exists:
+    print("✓ Chargement des données corrigées (sans data leakage)")
+    
+    # Charger les données déjà corrigées et normalisées
+    X_scaled = pd.read_csv('data/X_scaled_corrected.csv')
+    y_classification = pd.read_csv('data/y_classification_corrected.csv').values.ravel()
+    y_regression = pd.read_csv('data/y_regression_corrected.csv').values.ravel()
+    
+    # Charger le scaler
+    scaler = joblib.load('models/scaler_corrected.pkl')
+    
+    # Recréer X (non normalisé) pour compatibilité
+    X = X_scaled.copy()
+    
+    print(f"✓ X_scaled shape: {X_scaled.shape}")
+    print(f"✓ y_classification shape: {y_classification.shape}")
+    print(f"✓ y_regression shape: {y_regression.shape}")
+    print("\n✓ Données corrigées chargées avec succès!")
+    
+else:
+    print("⚠️ ATTENTION: Données corrigées non trouvées!")
+    print("\n--- Procédure de correction manuelle ---")
+    
+    # Identifier les colonnes à EXCLURE (contiennent des infos sur la cible)
+    columns_to_exclude = [
+        'Do you have Depression?',
+        'Do you have Anxiety?',
+        'Do you have Panic attack?',
+        'Did you seek any specialist for a treatment?',
+        'Do you have Depression?_encoded',
+        'Do you have Anxiety?_encoded',
+        'Do you have Panic attack?_encoded',
+        'Did you seek any specialist for a treatment?_encoded',
+        'mental_health_issue',
+        'mental_health_score',
+        'Timestamp',
+        'Cluster'
+    ]
+    
+    print(f"\nColonnes à exclure ({len(columns_to_exclude)}):")
+    for col in columns_to_exclude:
+        if col in df_clean.columns:
+            print(f"  - {col}")
+    
+    # Créer la liste des features VALIDES (sans data leakage)
+    valid_features = []
+    
+    # Features numériques de base
+    if 'Age' in df_clean.columns:
+        valid_features.append('Age')
+    
+    if 'CGPA_numeric' in df_clean.columns:
+        valid_features.append('CGPA_numeric')
+    elif 'What is your CGPA?' in df_clean.columns:
+        # Convertir CGPA si nécessaire
+        import re
+        def convert_cgpa(cgpa_value):
+            if isinstance(cgpa_value, (int, float)):
+                return float(cgpa_value)
+            elif isinstance(cgpa_value, str):
+                match = re.search(r'(\d+\.\d+)', str(cgpa_value))
+                if match:
+                    return float(match.group(1))
             return np.nan
+        
+        df_clean['CGPA_numeric'] = df_clean['What is your CGPA?'].apply(convert_cgpa)
+        valid_features.append('CGPA_numeric')
+    
+    # Features encodées SÛRES (pas liées à la santé mentale)
+    safe_encoded = [
+        'Choose your gender_encoded',
+        'Your current year of Study_encoded',
+        'What is your course?_encoded',
+        'Marital status_encoded'
+    ]
+    
+    for col in safe_encoded:
+        if col in df_clean.columns:
+            valid_features.append(col)
+    
+    print(f"\n✓ Features valides identifiées ({len(valid_features)}):")
+    for feat in valid_features:
+        print(f"  + {feat}")
+    
+    # Créer X propre (sans data leakage)
+    X = df_clean[valid_features].copy()
+    X = X.fillna(X.median())
+    
+    # Normaliser
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    X_scaled = pd.DataFrame(X_scaled, columns=valid_features)
+    
+    # Recréer les variables cibles
+    y_classification = df_clean['mental_health_issue'].copy()
+    y_regression = df_clean['mental_health_score'].copy()
+    
+    # Vérification de data leakage
+    print("\n--- Vérification de data leakage ---")
+    correlations = []
+    for col in X.columns:
+        corr = X[col].corr(y_classification)
+        correlations.append({'Feature': col, 'Correlation': abs(corr)})
+    
+    corr_df = pd.DataFrame(correlations).sort_values('Correlation', ascending=False)
+    print("\nCorrélations avec la cible:")
+    print(corr_df.to_string(index=False))
+    
+    suspicious = corr_df[corr_df['Correlation'] > 0.95]
+    if len(suspicious) > 0:
+        print("\n⚠️ ATTENTION: Corrélations suspectes détectées!")
+        print(suspicious)
     else:
-        return np.nan
+        print("\n✓ Aucune corrélation suspecte (toutes < 0.95)")
+    
+    # Sauvegarder les données corrigées
+    print("\n--- Sauvegarde des données corrigées ---")
+    X_scaled.to_csv('data/X_scaled_corrected.csv', index=False)
+    pd.DataFrame(y_classification).to_csv('data/y_classification_corrected.csv', index=False)
+    pd.DataFrame(y_regression).to_csv('data/y_regression_corrected.csv', index=False)
+    joblib.dump(scaler, 'models/scaler_corrected.pkl')
+    
+    print("✓ Données corrigées sauvegardées:")
+    print("  - data/X_scaled_corrected.csv")
+    print("  - data/y_classification_corrected.csv")
+    print("  - data/y_regression_corrected.csv")
+    print("  - models/scaler_corrected.pkl")
 
-# Appliquer la conversion à la colonne CGPA si elle existe
-if 'What is your CGPA?' in X_numeric.columns:
-    X_numeric['What is your CGPA?'] = X_numeric['What is your CGPA?'].apply(convert_cgpa_to_numeric)
-    print("✓ Colonne CGPA convertie en valeurs numériques")
+# Test rapide de validation
+print("\n--- Test de validation rapide ---")
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.metrics import accuracy_score
 
-# Remplacer les valeurs manquantes par la médiane
-X_numeric = X_numeric.apply(pd.to_numeric, errors='coerce')
-X_numeric = X_numeric.fillna(X_numeric.median())
+X_train_test, X_test_test, y_train_test, y_test_test = train_test_split(
+    X_scaled, y_classification, test_size=0.2, random_state=42, stratify=y_classification
+)
 
-# Maintenant normaliser
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X_numeric)
-X_scaled = pd.DataFrame(X_scaled, columns=X_numeric.columns)
+rf_test = RandomForestClassifier(n_estimators=50, max_depth=5, random_state=42)
+cv_scores = cross_val_score(rf_test, X_train_test, y_train_test, cv=3)
+rf_test.fit(X_train_test, y_train_test)
 
-# Sauvegarde du scaler
-joblib.dump(scaler, 'models/standard_scaler.pkl')
-print("✓ Données normalisées avec StandardScaler")
-print("✓ Scaler sauvegardé dans 'models/standard_scaler.pkl'")
-# Sauvegarde des données préparées
-df_clean.to_csv('data/student_mental_health_cleaned.csv', index=False)
-X_scaled.to_csv('data/X_scaled.csv', index=False)
-if y_regression is not None:
-    y_regression.to_csv('data/y_regression.csv', index=False)
+acc_train_test = rf_test.score(X_train_test, y_train_test)
+acc_test_test = rf_test.score(X_test_test, y_test_test)
+
+print(f"Accuracy Train: {acc_train_test:.4f}")
+print(f"Accuracy Test:  {acc_test_test:.4f}")
+print(f"Accuracy CV:    {cv_scores.mean():.4f} (±{cv_scores.std():.4f})")
+print(f"Écart:          {acc_train_test - acc_test_test:.4f}")
+
+# Diagnostic
+if acc_test_test >= 0.99:
+    print("\n⚠️ PROBLÈME: Accuracy trop élevée (>= 0.99)")
+    print("   → Il reste du data leakage")
+    print("   → Vérifiez les features utilisées")
+elif acc_test_test >= 0.75:
+    print("\n✅ SUCCÈS: Accuracy réaliste (0.75-0.99)")
+    print("   → Pas de data leakage évident")
+    print("   → Modèle prêt pour l'entraînement")
+else:
+    print("\n⚠️ Performance faible (< 0.75)")
+    print("   → Vérifiez que vous avez assez de features pertinentes")
+
+if acc_train_test - acc_test_test > 0.15:
+    print("\n⚠️ Overfitting détecté (écart > 0.15)")
+else:
+    print("\n✓ Pas d'overfitting majeur (écart <= 0.15)")
+
+print("\n✓ Données prêtes pour la modélisation!")
+print(f"✓ Shape finale: X={X_scaled.shape}, y_class={y_classification.shape}, y_reg={y_regression.shape}")
+print("\n--- Partie 4 complétée ---\n")
+
+
+# =============================================================================
+# ÉTAPE 4.2: VÉRIFICATION DE DATA LEAKAGE
+# =============================================================================
+
+print("=" * 80)
+print("PARTIE 4.2: VÉRIFICATION DE DATA LEAKAGE ")
+print("=" * 80)
+
+# Fonction à ajouter
+def check_data_leakage(df, feature_cols, target_col):
+    """Vérifie s'il y a des fuites de données"""
+    print("=== VÉRIFICATION DE DATA LEAKAGE ===\n")
+    
+    correlations = {}
+    for col in feature_cols:
+        if pd.api.types.is_numeric_dtype(df[col]) and pd.api.types.is_numeric_dtype(df[target_col]):
+            corr = df[col].corr(df[target_col])
+            correlations[col] = abs(corr)
+    
+    sorted_corr = sorted(correlations.items(), key=lambda x: x[1], reverse=True)
+    
+    print("Top 5 features les plus corrélées avec la cible:")
+    for feat, corr in sorted_corr[:5]:
+        status = "⚠️ SUSPECT (>0.95)" if corr > 0.95 else "✓ OK"
+        print(f"{feat}: {corr:.4f} {status}")
+    
+    suspicious = [feat for feat, corr in sorted_corr if corr > 0.95]
+    if suspicious:
+        print(f"\n⚠️ ATTENTION: Features à exclure: {suspicious}")
+        return suspicious
+    else:
+        print("\n✓ Aucune fuite de données détectée")
+        return []
+
+# UTILISATION IMMÉDIATE
 if y_classification is not None:
-    y_classification.to_csv('data/y_classification.csv', index=False)
+    print("\n--- Vérification pour la classification ---")
+    suspicious_features = check_data_leakage(df_clean, feature_columns, 'mental_health_issue')
+    
+    # CORRECTION: Retirer les features suspectes
+    if suspicious_features:
+        print(f"\nRetrait des features suspectes: {suspicious_features}")
+        feature_columns_clean = [col for col in feature_columns if col not in suspicious_features]
+        
+        # Recréer X sans les features problématiques
+        X_clean = df_clean[feature_columns_clean]
+        
+        # Re-normaliser
+        scaler_clean = StandardScaler()
+        X_scaled_clean = scaler_clean.fit_transform(X_clean)
+        X_scaled_clean = pd.DataFrame(X_scaled_clean, columns=feature_columns_clean)
+        
+        print(f"✓ Nouvelles dimensions: {X_scaled_clean.shape}")
+        
+        # Utiliser X_scaled_clean pour la suite
+        X_scaled = X_scaled_clean
+        X = X_clean
+    else:
+        print("✓ Pas de corrections nécessaires")
 
-print("\n✓ Données nettoyées sauvegardées dans 'data/'")
-print("\n--- Partie 1 complétée: Préparation des données ---\n")
+print("\n--- Partie 4.8 complétée ---\n")
+
 
 # =============================================================================
 # PARTIE 5: RÉGRESSION LINÉAIRE SIMPLE ET MULTIPLE
@@ -749,6 +929,50 @@ if y_classification is not None:
     print("\n--- Partie 4 complétée: KNN ---\n")
 else:
     print("⚠ Pas de variable cible pour la classification disponible")
+
+print("\n--- 7.1 Validation robuste du KNN ---")
+
+if y_classification is not None:
+    # Test avec plusieurs random states
+    print("Test de stabilité avec différents splits:")
+    
+    stability_scores = []
+    for seed in [42, 123, 456, 789, 999]:
+        X_tr, X_te, y_tr, y_te = train_test_split(
+            X_scaled, y_classification, test_size=0.2, 
+            random_state=seed, stratify=y_classification
+        )
+        
+        knn_temp = KNeighborsClassifier(n_neighbors=best_k)
+        knn_temp.fit(X_tr, y_tr)
+        score = knn_temp.score(X_te, y_te)
+        stability_scores.append(score)
+        print(f"  Seed {seed}: Accuracy = {score:.4f}")
+    
+    mean_score = np.mean(stability_scores)
+    std_score = np.std(stability_scores)
+    
+    print(f"\nMoyenne: {mean_score:.4f} (±{std_score:.4f})")
+    
+    if std_score < 0.05:
+        print("✓ Modèle STABLE")
+    else:
+        print("⚠️ Modèle INSTABLE - Résultats variables selon le split")
+    
+    # Vérification d'overfitting
+    knn_best.fit(X_train_clf, y_train_clf)
+    acc_train = knn_best.score(X_train_clf, y_train_clf)
+    acc_test = knn_best.score(X_test_clf, y_test_clf)
+    
+    print(f"\nVérification overfitting:")
+    print(f"  Accuracy Train: {acc_train:.4f}")
+    print(f"  Accuracy Test: {acc_test:.4f}")
+    print(f"  Écart: {acc_train - acc_test:.4f}")
+    
+    if acc_train - acc_test > 0.1:
+        print("  ⚠️ Possible overfitting détecté")
+    else:
+        print("  ✓ Pas d'overfitting majeur")
 
 # =============================================================================
 # PARTIE 8: SUPPORT VECTOR MACHINE (SVM)
@@ -1526,7 +1750,6 @@ print(recommendations)
 print("\n--- 12.2 Filtrage collaboratif ---")
 
 # Création d'une matrice utilisateur-item simulée
-# Simulons des "évaluations" de ressources/interventions par les étudiants
 np.random.seed(42)
 n_students = len(df_clean)
 n_resources = 5
@@ -1686,6 +1909,88 @@ if 'mental_health_issue' in df_clean.columns:
 
 print("\n--- Partie 9 complétée: Systèmes de Recommandation ---\n")
 
+
+
+# =============================================================================
+# PARTIE 12: ANALYSE DE ROBUSTESSE DES MODÈLES
+# =============================================================================
+
+print("=" * 80)
+print("PARTIE 12.5: ANALYSE DE ROBUSTESSE DES MODÈLES")
+print("=" * 80)
+
+if y_classification is not None:
+    print("\n--- Test de robustesse pour tous les modèles ---\n")
+    
+    models_to_test = {
+        'KNN': KNeighborsClassifier(n_neighbors=best_k),
+        'Random Forest': RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42),
+        'XGBoost': XGBClassifier(n_estimators=100, max_depth=5, random_state=42, eval_metric='logloss')
+    }
+    
+    robustness_results = []
+    
+    for model_name, model in models_to_test.items():
+        print(f"Test de {model_name}...")
+        
+        # Test avec 5 splits différents
+        scores = []
+        for seed in [42, 123, 456, 789, 999]:
+            X_tr, X_te, y_tr, y_te = train_test_split(
+                X_scaled, y_classification, test_size=0.2,
+                random_state=seed, stratify=y_classification
+            )
+            model_copy = type(model)(**model.get_params())
+            model_copy.fit(X_tr, y_tr)
+            score = model_copy.score(X_te, y_te)
+            scores.append(score)
+        
+        mean_acc = np.mean(scores)
+        std_acc = np.std(scores)
+        
+        # Évaluation de la stabilité
+        if std_acc < 0.02:
+            stability = "Excellent"
+        elif std_acc < 0.05:
+            stability = "Bon"
+        elif std_acc < 0.10:
+            stability = "Moyen"
+        else:
+            stability = "Faible"
+        
+        robustness_results.append({
+            'Modèle': model_name,
+            'Acc Moyenne': f"{mean_acc:.4f}",
+            'Écart-type': f"{std_acc:.4f}",
+            'Stabilité': stability,
+            'Scores': scores
+        })
+        
+        print(f"  Moyenne: {mean_acc:.4f} ± {std_acc:.4f} [{stability}]")
+    
+    # Visualisation de la robustesse
+    plt.figure(figsize=(12, 6))
+    
+    for i, result in enumerate(robustness_results):
+        scores = result['Scores']
+        plt.violinplot([scores], positions=[i], showmeans=True, showmedians=True)
+        plt.scatter([i]*len(scores), scores, alpha=0.5, s=50)
+    
+    plt.xticks(range(len(robustness_results)), 
+               [r['Modèle'] for r in robustness_results])
+    plt.ylabel('Accuracy')
+    plt.title('Robustesse des modèles (5 splits différents)')
+    plt.grid(axis='y', alpha=0.3)
+    plt.tight_layout()
+    plt.savefig('visualizations/23_model_robustness.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    print("\n✓ Analyse de robustesse complétée")
+    print("✓ Le modèle le plus stable devrait être privilégié en production")
+
+print("\n--- Analyse de robustesse complétée ---\n")
+
+
 # =============================================================================
 # PARTIE 13: RÉSUMÉ FINAL ET EXPORT DES RÉSULTATS
 # =============================================================================
@@ -1821,22 +2126,3 @@ print(f"Visualisations générées: {len([f for f in os.listdir('visualizations'
 print("\n" + "=" * 80)
 print("🎉 PROJET MACHINE LEARNING APPLIQUÉ - TERMINÉ AVEC SUCCÈS!")
 print("=" * 80)
-print("""
-Ce notebook couvre l'intégralité du module SI-17:
-✓ Introduction au Machine Learning et Data Science
-✓ Manipulation des librairies Python (Numpy, Pandas, Sklearn)
-✓ Préparation et visualisation des données (EDA)
-✓ Régression linéaire simple et multiple
-✓ Régression polynomiale
-✓ Classification (KNN, SVM, Decision Tree, Random Forest, XGBoost, Naive Bayes, Gradient Boosting)
-✓ Clustering (K-Means)
-✓ Réduction dimensionnelle (PCA)
-✓ Systèmes de recommandation
-
-📁 Tous les modèles sont sauvegardés dans le dossier 'models/'
-📊 Toutes les visualisations sont dans 'visualizations/'
-📄 Consultez 'results/final_report.html' pour le rapport complet
-📖 Lisez README.md pour la documentation
-
-Tous les acquis d'apprentissage (AA1-AA6) ont été validés!
-""")
