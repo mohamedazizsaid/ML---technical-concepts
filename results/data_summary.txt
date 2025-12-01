@@ -1,6 +1,0 @@
-RÉSUMÉ DES DONNÉES - STUDENT MENTAL HEALTH
-================================================================================
-
-Forme du dataset: (300, 11)
-Colonnes: ['Timestamp', 'Choose your gender', 'Age', 'What is your course?', 'Your current year of Study', 'What is your CGPA?', 'Marital status', 'Do you have Depression?', 'Do you have Anxiety?', 'Do you have Panic attack?', 'Did you seek any specialist for a treatment?']
-Valeurs manquantes totales: 0
