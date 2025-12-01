@@ -1,0 +1,57 @@
+{
+    "simple": {
+        "feature": "What is your CGPA?",
+        "MSE": 0.5162854913203344,
+        "RMSE": 0.7185300907549623,
+        "MAE": 0.6316418115143564,
+        "R2": -0.018984522342765375
+    },
+    "multiple": {
+        "MSE": 1.3494862724991736e-30,
+        "RMSE": 1.1616739097092494e-15,
+        "MAE": 8.93729534823251e-16,
+        "R2": 1.0,
+        "feature_importance": [
+            {
+                "Feature": "Do you have Anxiety?_encoded",
+                "Coefficient": 0.49995555358007077
+            },
+            {
+                "Feature": "Do you have Depression?_encoded",
+                "Coefficient": 0.4995998398718718
+            },
+            {
+                "Feature": "Do you have Panic attack?_encoded",
+                "Coefficient": 0.49888765156985837
+            },
+            {
+                "Feature": "Age",
+                "Coefficient": -5.436059115109303e-16
+            },
+            {
+                "Feature": "Choose your gender_encoded",
+                "Coefficient": -3.7730235602495554e-16
+            },
+            {
+                "Feature": "What is your course?_encoded",
+                "Coefficient": -3.3306690738754696e-16
+            },
+            {
+                "Feature": "Did you seek any specialist for a treatment?_encoded",
+                "Coefficient": -2.6020852139652106e-16
+            },
+            {
+                "Feature": "What is your CGPA?",
+                "Coefficient": -1.5265566588595902e-16
+            },
+            {
+                "Feature": "Marital status_encoded",
+                "Coefficient": 9.020562075079397e-17
+            },
+            {
+                "Feature": "Your current year of Study_encoded",
+                "Coefficient": -1.214306433183765e-17
+            }
+        ]
+    }
+}

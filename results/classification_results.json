@@ -1,0 +1,37 @@
+[
+    {
+        "Mod\u00e8le": "KNN",
+        "Accuracy": 0.9833333333333333,
+        "F1-Score": 0.9908256880733946
+    },
+    {
+        "Mod\u00e8le": "SVM (linear)",
+        "Accuracy": 1.0,
+        "F1-Score": 1.0
+    },
+    {
+        "Mod\u00e8le": "Decision Tree",
+        "Accuracy": 1.0,
+        "F1-Score": 1.0
+    },
+    {
+        "Mod\u00e8le": "Random Forest",
+        "Accuracy": 1.0,
+        "F1-Score": 1.0
+    },
+    {
+        "Mod\u00e8le": "XGBoost",
+        "Accuracy": 1.0,
+        "F1-Score": 1.0
+    },
+    {
+        "Mod\u00e8le": "Naive Bayes",
+        "Accuracy": 0.9833333333333333,
+        "F1-Score": 0.9908256880733946
+    },
+    {
+        "Mod\u00e8le": "Gradient Boosting",
+        "Accuracy": 1.0,
+        "F1-Score": 1.0
+    }
+]

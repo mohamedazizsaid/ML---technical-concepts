@@ -46,13 +46,6 @@ pour analyser et prédire les problèmes de santé mentale chez les étudiants.
 - XGBoost
 - Matplotlib, Seaborn
 
-## 📊 Dataset
-
-- **Source** : [UCI Heart Disease](https://archive.ics.uci.edu/ml/datasets/heart+disease)
-- **Taille** : 303 patients, 14 attributs
-- **Objectif** : Prédiction de maladie cardiaque
-
-
 ## 📊 Modèles Implémentés
 
 ### Régression
@@ -65,12 +58,14 @@ pour analyser et prédire les problèmes de santé mentale chez les étudiants.
 - Arbre de Décision
 - Random Forest
 - XGBoost
+- Naive Bayes
+- Gradient Boosting
 
 ### Clustering
-- K-Means (k optimal: 3)
+- K-Means (k optimal: 2)
 
 ### Réduction Dimensionnelle
-- PCA (9 composantes pour 95% variance)
+- PCA (10 composantes pour 95% variance)
 
 ### Systèmes de Recommandation
 - Content-Based Filtering
@@ -79,16 +74,18 @@ pour analyser et prédire les problèmes de santé mentale chez les étudiants.
 
 ## 📈 Résultats Clés
 
-     Catégorie         Méthode Métrique principale
-    Régression   Linear Simple          R²=-0.0086
-    Régression Linear Multiple           R²=1.0000
-Classification             KNN          Acc=0.9524
-Classification    SVM (linear)          Acc=1.0000
-Classification   Decision Tree          Acc=1.0000
-Classification   Random Forest          Acc=1.0000
-Classification         XGBoost          Acc=1.0000
-    Clustering   K-Means (k=3)   Silhouette=0.2158
-Réduction dim.   PCA (9 comp.)      Variance=96.7%
+     Catégorie           Méthode Métrique principale
+    Régression     Linear Simple          R²=-0.0190
+    Régression   Linear Multiple           R²=1.0000
+Classification               KNN          Acc=0.9833
+Classification      SVM (linear)          Acc=1.0000
+Classification     Decision Tree          Acc=1.0000
+Classification     Random Forest          Acc=1.0000
+Classification           XGBoost          Acc=1.0000
+Classification       Naive Bayes          Acc=0.9833
+Classification Gradient Boosting          Acc=1.0000
+    Clustering     K-Means (k=2)   Silhouette=0.1257
+Réduction dim.    PCA (10 comp.)     Variance=100.0%
 ## 🚀 Utilisation
 
 1. Télécharger le dataset depuis Kaggle
@@ -99,7 +96,7 @@ Réduction dim.   PCA (9 comp.)      Variance=96.7%
 ## 📝 Auteur
 
 Projet académique - Module SI-17
-Date: 2025-11-19
+Date: 2025-12-01
 
 ## 📄 Licence
 

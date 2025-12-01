@@ -33,7 +33,9 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, PolynomialFeatur
 from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report, 
                              roc_curve, auc, f1_score, mean_squared_error, r2_score,
                              silhouette_score, jaccard_score, mean_absolute_error)
-
+# Dans la section des imports (ligne ~40), ajoutez :
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import GradientBoostingClassifier
 # Modèles de Régression
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 
@@ -922,22 +924,206 @@ if y_classification is not None:
     print("\nImportance des features (XGBoost):")
     print(feature_imp_xgb.head(10))
     
-    # Comparaison des modèles
+    # Matrice de confusion XGBoost
+    cm_xgb = confusion_matrix(y_test_clf, y_pred_xgb)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm_xgb, annot=True, fmt='d', cmap='Oranges', cbar=False)
+    plt.title('Matrice de Confusion - XGBoost')
+    plt.ylabel('Vraie classe')
+    plt.xlabel('Classe prédite')
+    plt.savefig('visualizations/15_xgboost_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    print("\n--- Partie 9.1-9.3 complétée ---\n")
+else:
+    print("⚠ Pas de variable cible pour la classification disponible")
+
+# =============================================================================
+# PARTIE 9.4: NAIVE BAYES
+# =============================================================================
+print("=" * 80)
+print("PARTIE 9.4: NAIVE BAYES")
+print("=" * 80)
+
+if y_classification is not None:
+    print("--- Naive Bayes ---")
+    # Initialisation et entraînement du modèle Naive Bayes
+    nb = GaussianNB()
+    nb.fit(X_train_clf, y_train_clf)
+    y_pred_nb = nb.predict(X_test_clf)
+    y_pred_proba_nb = nb.predict_proba(X_test_clf)[:, 1]
+    
+    # Calcul des métriques
+    acc_nb = accuracy_score(y_test_clf, y_pred_nb)
+    f1_nb = f1_score(y_test_clf, y_pred_nb)
+    
+    print(f"Accuracy: {acc_nb:.4f}")
+    print(f"F1-Score: {f1_nb:.4f}")
+    
+    # Sauvegarde du modèle
+    joblib.dump(nb, 'models/classification/naive_bayes.pkl')
+    print(f"✓ Modèle sauvegardé: 'models/classification/naive_bayes.pkl'")
+    
+    # Matrice de confusion
+    cm_nb = confusion_matrix(y_test_clf, y_pred_nb)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm_nb, annot=True, fmt='d', cmap='Purples', cbar=False)
+    plt.title('Matrice de Confusion - Naive Bayes')
+    plt.ylabel('Vraie classe')
+    plt.xlabel('Classe prédite')
+    plt.savefig('visualizations/16_naive_bayes_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    # Courbe ROC
+    fpr_nb, tpr_nb, _ = roc_curve(y_test_clf, y_pred_proba_nb)
+    roc_auc_nb = auc(fpr_nb, tpr_nb)
+    
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr_nb, tpr_nb, linewidth=2, label=f'Naive Bayes (AUC = {roc_auc_nb:.3f})', color='purple')
+    plt.plot([0, 1], [0, 1], 'k--', linewidth=2)
+    plt.xlabel('Taux de faux positifs')
+    plt.ylabel('Taux de vrais positifs')
+    plt.title('Courbe ROC - Naive Bayes')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('visualizations/17_naive_bayes_roc_curve.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    print("\n--- Partie 9.4 complétée ---\n")
+
+# =============================================================================
+# PARTIE 9.5: GRADIENT BOOSTING
+# =============================================================================
+print("=" * 80)
+print("PARTIE 9.5: GRADIENT BOOSTING")
+print("=" * 80)
+
+if y_classification is not None:
+    print("--- Gradient Boosting ---")
+    # Initialisation et entraînement du modèle Gradient Boosting
+    gb = GradientBoostingClassifier(
+        n_estimators=100,
+        learning_rate=0.1,
+        max_depth=5,
+        random_state=42,
+        subsample=0.8
+    )
+    gb.fit(X_train_clf, y_train_clf)
+    y_pred_gb = gb.predict(X_test_clf)
+    y_pred_proba_gb = gb.predict_proba(X_test_clf)[:, 1]
+    
+    # Calcul des métriques
+    acc_gb = accuracy_score(y_test_clf, y_pred_gb)
+    f1_gb = f1_score(y_test_clf, y_pred_gb)
+    
+    print(f"Accuracy: {acc_gb:.4f}")
+    print(f"F1-Score: {f1_gb:.4f}")
+    
+    # Sauvegarde du modèle
+    joblib.dump(gb, 'models/classification/gradient_boosting.pkl')
+    print(f"✓ Modèle sauvegardé: 'models/classification/gradient_boosting.pkl'")
+    
+    # Importance des features
+    feature_imp_gb = pd.DataFrame({
+        'Feature': X.columns,
+        'Importance': gb.feature_importances_
+    }).sort_values('Importance', ascending=False)
+    
+    print("\nImportance des features (Gradient Boosting):")
+    print(feature_imp_gb.head(10))
+    
+    # Visualisation de l'importance des features
+    plt.figure(figsize=(10, 6))
+    plt.barh(feature_imp_gb['Feature'][:10], feature_imp_gb['Importance'][:10], color='teal')
+    plt.xlabel('Importance')
+    plt.title('Top 10 Features - Gradient Boosting')
+    plt.gca().invert_yaxis()
+    plt.tight_layout()
+    plt.savefig('visualizations/18_gradient_boosting_importance.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    # Matrice de confusion
+    cm_gb = confusion_matrix(y_test_clf, y_pred_gb)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm_gb, annot=True, fmt='d', cmap='YlOrBr', cbar=False)
+    plt.title('Matrice de Confusion - Gradient Boosting')
+    plt.ylabel('Vraie classe')
+    plt.xlabel('Classe prédite')
+    plt.savefig('visualizations/19_gradient_boosting_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    # Courbe ROC
+    fpr_gb, tpr_gb, _ = roc_curve(y_test_clf, y_pred_proba_gb)
+    roc_auc_gb = auc(fpr_gb, tpr_gb)
+    
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr_gb, tpr_gb, linewidth=2, label=f'Gradient Boosting (AUC = {roc_auc_gb:.3f})', color='darkorange')
+    plt.plot([0, 1], [0, 1], 'k--', linewidth=2)
+    plt.xlabel('Taux de faux positifs')
+    plt.ylabel('Taux de vrais positifs')
+    plt.title('Courbe ROC - Gradient Boosting')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('visualizations/20_gradient_boosting_roc_curve.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    # Apprentissage de la courbe d'erreur
+    train_scores = []
+    test_scores = []
+    
+    for n_estimators in range(1, 101, 10):
+        gb_temp = GradientBoostingClassifier(
+            n_estimators=n_estimators,
+            learning_rate=0.1,
+            max_depth=5,
+            random_state=42
+        )
+        gb_temp.fit(X_train_clf, y_train_clf)
+        
+        train_scores.append(gb_temp.score(X_train_clf, y_train_clf))
+        test_scores.append(gb_temp.score(X_test_clf, y_test_clf))
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, 101, 10), train_scores, label='Score entraînement', marker='o', linewidth=2)
+    plt.plot(range(1, 101, 10), test_scores, label='Score test', marker='s', linewidth=2)
+    plt.xlabel('Nombre d\'estimateurs')
+    plt.ylabel('Accuracy')
+    plt.title('Courbe d\'apprentissage - Gradient Boosting')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('visualizations/21_gradient_boosting_learning_curve.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    print("\n--- Partie 9.5 complétée ---\n")
+
+# =============================================================================
+# PARTIE 9.6: COMPARAISON DE TOUS LES MODÈLES
+# =============================================================================
+print("=" * 80)
+print("PARTIE 9.6: COMPARAISON DE TOUS LES MODÈLES DE CLASSIFICATION")
+print("=" * 80)
+
+if y_classification is not None:
+    # Comparaison des modèles (MAINTENANT toutes les variables sont définies)
     models_comparison = pd.DataFrame({
-        'Modèle': ['KNN', f'SVM ({best_kernel})', 'Decision Tree', 'Random Forest', 'XGBoost'],
+        'Modèle': ['KNN', f'SVM ({best_kernel})', 'Decision Tree', 'Random Forest', 'XGBoost', 'Naive Bayes', 'Gradient Boosting'],
         'Accuracy': [
             accuracy_score(y_test_clf, y_pred_knn),
             svm_results[best_kernel]['accuracy'],
             acc_dt,
             acc_rf,
-            acc_xgb
+            acc_xgb,
+            acc_nb,  
+            acc_gb   
         ],
         'F1-Score': [
             f1_score(y_test_clf, y_pred_knn),
             svm_results[best_kernel]['f1_score'],
             f1_dt,
             f1_rf,
-            f1_xgb
+            f1_xgb,
+            f1_nb,   
+            f1_gb    
         ]
     })
     
@@ -963,17 +1149,7 @@ if y_classification is not None:
     axes[1].tick_params(axis='x', rotation=45)
     
     plt.tight_layout()
-    plt.savefig('visualizations/14_models_comparison.png', dpi=300, bbox_inches='tight')
-    plt.show()
-    
-    # Matrice de confusion XGBoost
-    cm_xgb = confusion_matrix(y_test_clf, y_pred_xgb)
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(cm_xgb, annot=True, fmt='d', cmap='Oranges', cbar=False)
-    plt.title('Matrice de Confusion - XGBoost')
-    plt.ylabel('Vraie classe')
-    plt.xlabel('Classe prédite')
-    plt.savefig('visualizations/15_xgboost_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.savefig('visualizations/22_models_comparison.png', dpi=300, bbox_inches='tight')
     plt.show()
     
     # Sauvegarde des résultats
@@ -982,10 +1158,7 @@ if y_classification is not None:
         json.dump(classification_results, f, indent=4)
     
     print("\n✓ Résultats de classification sauvegardés dans 'results/classification_results.json'")
-    print("\n--- Partie 6 complétée: Arbre de Décision et XGBoost ---\n")
-else:
-    print("⚠ Pas de variable cible pour la classification disponible")
-
+    print("\n--- Partie 9 complétée: Tous les modèles de classification ---\n")
 # =============================================================================
 # PARTIE 10: CLUSTERING - K-MEANS
 # =============================================================================
@@ -1535,7 +1708,8 @@ if y_classification is not None:
     summary_data.append(['Classification', 'Decision Tree', f'Acc={acc_dt:.4f}'])
     summary_data.append(['Classification', 'Random Forest', f'Acc={acc_rf:.4f}'])
     summary_data.append(['Classification', 'XGBoost', f'Acc={acc_xgb:.4f}'])
-
+    summary_data.append(['Classification', 'Naive Bayes', f'Acc={acc_nb:.4f}'])
+    summary_data.append(['Classification', 'Gradient Boosting', f'Acc={acc_gb:.4f}'])
 # Clustering et PCA
 summary_data.append(['Clustering', f'K-Means (k={optimal_k})', f'Silhouette={final_silhouette:.4f}'])
 summary_data.append(['Réduction dim.', f'PCA ({n_components_95} comp.)', f'Variance={cumulative_variance[n_components_95-1]*100:.1f}%'])
@@ -1643,103 +1817,6 @@ print(f"Features après PCA: {n_components_95}")
 print(f"Modèles sauvegardés: {len(os.listdir('models/classification')) + len(os.listdir('models/regression')) + len(os.listdir('models/clustering'))}")
 print(f"Visualisations générées: {len([f for f in os.listdir('visualizations') if f.endswith('.png')])}")
 
-# Création d'un fichier README
-readme_content = f"""# Projet Machine Learning - Student Mental Health
-
-## 📋 Description
-Ce projet applique diverses techniques de Machine Learning sur le dataset Student Mental Health 
-pour analyser et prédire les problèmes de santé mentale chez les étudiants.
-
-## 📂 Structure du Projet
-
-```
-.
-├── data/                          # Données brutes et traitées
-│   ├── Student Mental health.csv
-│   ├── student_mental_health_cleaned.csv
-│   ├── X_scaled.csv
-│   ├── y_regression.csv
-│   └── y_classification.csv
-├── models/                        # Modèles entraînés
-│   ├── regression/
-│   ├── classification/
-│   ├── clustering/
-│   ├── dimensionality_reduction/
-│   └── recommendation/
-├── visualizations/                # Graphiques et visualisations
-├── results/                       # Résultats et rapports
-│   ├── final_summary.csv
-│   ├── final_report.html
-│   └── *_results.json
-└── notebooks/                     # Notebooks Jupyter
-
-```
-
-## 🎯 Objectifs Pédagogiques Validés
-
-✅ AA1: Concepts clés du Machine Learning
-✅ AA2: Phases d'un projet ML
-✅ AA3: Préparation des données avec Python
-✅ AA4: Modèles de régression
-✅ AA5: Méthodes de classification
-✅ AA6: Modèles de segmentation
-
-## 🔧 Technologies Utilisées
-
-- Python 3.x
-- NumPy, Pandas
-- Scikit-learn
-- XGBoost
-- Matplotlib, Seaborn
-
-## 📊 Modèles Implémentés
-
-### Régression
-- Régression Linéaire Simple et Multiple
-- Régression Polynomiale (degrés 1-4)
-
-### Classification
-- K-Nearest Neighbors (KNN)
-- Support Vector Machines (SVM)
-- Arbre de Décision
-- Random Forest
-- XGBoost
-
-### Clustering
-- K-Means (k optimal: {optimal_k})
-
-### Réduction Dimensionnelle
-- PCA ({n_components_95} composantes pour 95% variance)
-
-### Systèmes de Recommandation
-- Content-Based Filtering
-- Collaborative Filtering
-- Hybrid Recommender System
-
-## 📈 Résultats Clés
-
-{final_summary.to_string(index=False)}
-## 🚀 Utilisation
-
-1. Télécharger le dataset depuis Kaggle
-2. Placer le fichier CSV dans le dossier `data/`
-3. Exécuter le script principal: `python ml_complete_project.py`
-4. Consulter les résultats dans `results/final_report.html`
-
-## 📝 Auteur
-
-Projet académique - Module SI-17
-Date: {datetime.now().strftime('%Y-%m-%d')}
-
-## 📄 Licence
-
-Projet éducatif - Usage académique uniquement
-"""
-
-with open('README.md', 'w', encoding='utf-8') as f:
-    f.write(readme_content)
-
-print("✓ README.md créé")
 
 print("\n" + "=" * 80)
 print("🎉 PROJET MACHINE LEARNING APPLIQUÉ - TERMINÉ AVEC SUCCÈS!")
@@ -1751,7 +1828,7 @@ Ce notebook couvre l'intégralité du module SI-17:
 ✓ Préparation et visualisation des données (EDA)
 ✓ Régression linéaire simple et multiple
 ✓ Régression polynomiale
-✓ Classification (KNN, SVM, Decision Tree, Random Forest, XGBoost)
+✓ Classification (KNN, SVM, Decision Tree, Random Forest, XGBoost, Naive Bayes, Gradient Boosting)
 ✓ Clustering (K-Means)
 ✓ Réduction dimensionnelle (PCA)
 ✓ Systèmes de recommandation

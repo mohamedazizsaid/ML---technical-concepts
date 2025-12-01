@@ -1,102 +1,301 @@
 Timestamp,Choose your gender,Age,What is your course?,Your current year of Study,What is your CGPA?,Marital status,Do you have Depression?,Do you have Anxiety?,Do you have Panic attack?,Did you seek any specialist for a treatment?
-8/7/2020 12:02,Female,18,Engineering,year 1,3.00 - 3.49,No,Yes,No,Yes,No
-8/7/2020 12:04,Male,21,Islamic education,year 2,3.00 - 3.49,No,No,Yes,No,No
-8/7/2020 12:05,Male,19,BIT,Year 1,3.00 - 3.49,No,Yes,Yes,Yes,No
-8/7/2020 12:06,Female,22,Laws,year 3,3.00 - 3.49,Yes,Yes,No,No,No
-8/7/2020 12:13,Male,23,Mathemathics,year 4,3.00 - 3.49,No,No,No,No,No
-8/7/2020 12:31,Male,19,Engineering,Year 2,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 12:32,Female,23,Pendidikan islam,year 2,3.50 - 4.00 ,Yes,Yes,No,Yes,No
-8/7/2020 12:33,Female,18,BCS,year 1,3.50 - 4.00,No,No,Yes,No,No
-8/7/2020 12:35,Female,19,Human Resources,Year 2,2.50 - 2.99,No,No,No,No,No
-8/7/2020 12:39,Male,18,Irkhs,year 1,3.50 - 4.00,No,No,Yes,Yes,No
-8/7/2020 12:39,Female,20,Psychology,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 12:39,Female,24,Engineering,Year 3,3.50 - 4.00,Yes,Yes,No,No,No
-8/7/2020 12:40,Female,18,BCS,year 1,3.00 - 3.49,No,Yes,No,No,No
-8/7/2020 12:41,Male,19,Engineering,year 1,3.00 - 3.49,No,No,No,No,No
-8/7/2020 12:43,Female,18,KENMS,Year 2,3.50 - 4.00,No,No,Yes,No,No
-8/7/2020 12:43,Male,24,BCS,Year 3,3.50 - 4.00,No,No,No,No,No
-8/7/2020 12:46,Female,24,Accounting ,year 3,3.00 - 3.49,No,No,No,No,No
-8/7/2020 12:52,Female,24,ENM,year 4,3.00 - 3.49,Yes,Yes,Yes,Yes,No
-8/7/2020 13:05,Female,20,BIT,Year 2,3.50 - 4.00,No,No,Yes,No,No
-8/7/2020 13:07,Female,18,Marine science,year 2,3.50 - 4.00,Yes,Yes,Yes,Yes,No
-8/7/2020 13:12,Female,19,Engineering,year 1,3.00 - 3.49,No,No,No,Yes,No
-8/7/2020 13:13,Female,18,KOE,Year 2,3.00 - 3.49,No,No,No,No,No
-8/7/2020 13:13,Female,24,BCS,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 13:15,Female,24,Engineering,year 1,3.00 - 3.49,No,No,No,No,No
-8/7/2020 13:17,Female,23,BCS,Year 3,3.50 - 4.00,No,Yes,Yes,Yes,No
-8/7/2020 13:29,Female,18,Banking Studies,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 13:35,Female,19,Engineering,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 13:41,Male,18,Engineering,Year 2,3.00 - 3.49,Yes,Yes,Yes,No,No
-8/7/2020 13:58,Female,24,BIT,Year 3,3.50 - 4.00,Yes,Yes,Yes,Yes,Yes
-8/7/2020 14:05,Female,24,BCS,year 4,3.50 - 4.00,No,No,No,No,No
-8/7/2020 14:27,Female,23,Business Administration,Year 2,3.00 - 3.49,No,No,No,No,No
-8/7/2020 14:29,Male,18,BCS,year 2,3.00 - 3.49,No,No,No,No,No
-8/7/2020 14:29,Male,19,BCS,year 1,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 14:31,Male,18,BCS,Year 2,3.50 - 4.00,Yes,Yes,Yes,No,Yes
-8/7/2020 14:41,Female,19,BIT,year 1,3.00 - 3.49,No,Yes,Yes,Yes,No
-8/7/2020 14:43,Female,18,Engineering,year 1,2.00 - 2.49,No,No,No,No,No
-8/7/2020 14:43,Female,18,Law,Year 3,3.00 - 3.49,No,Yes,Yes,No,No
-8/7/2020 14:45,Female,19,BIT,year 1,2.50 - 2.99,No,Yes,Yes,Yes,No
-8/7/2020 14:47,Female,18,KIRKHS,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 14:56,Female,24,Engineering,Year 2,2.50 - 2.99,Yes,Yes,No,Yes,Yes
-8/7/2020 14:57,Female,24,BIT,Year 3,3.00 - 3.49,No,No,Yes,No,No
-8/7/2020 14:57,Female,22,Engineering,year 4,3.50 - 4.00,No,No,No,No,No
-8/7/2020 14:58,Female,20,Usuluddin ,year 2,3.00 - 3.49,No,Yes,No,No,No
-8/7/2020 15:07,Male,,BIT,year 1,0 - 1.99,No,No,No,No,No
-8/7/2020 15:08,Male,23,TAASL,year 2,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 15:09,Male,18,BCS,year 1,3.50 - 4.00,No,No,Yes,Yes,No
-8/7/2020 15:12,Female,19,Engineering,year 1,3.50 - 4.00,No,No,Yes,No,No
-8/7/2020 15:14,Female,18,Engine,year 4,3.50 - 4.00,No,No,No,No,No
-8/7/2020 15:14,Male,24,BCS,year 2,3.00 - 3.49,No,Yes,No,No,No
-8/7/2020 15:18,Female,24,BCS,year 3,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 15:27,Female,23,ALA,year 1,2.50 - 2.99,Yes,Yes,No,Yes,Yes
-8/7/2020 15:37,Female,18,BCS,year 2,3.50 - 4.00,No,No,Yes,No,No
-8/7/2020 15:47,Female,19,Biomedical science,year 3,3.00 - 3.49,No,No,No,No,No
-8/7/2020 15:48,Female,20,koe,year 3,3.00 - 3.49,Yes,Yes,Yes,Yes,No
-8/7/2020 15:57,Female,19,BCS,year 1,3.50 - 4.00,No,Yes,No,Yes,Yes
-8/7/2020 15:58,Male,21,BCS,year 1,3.00 - 3.49,No,No,No,No,No
-8/7/2020 16:08,Male,23,Kirkhs,Year 3,3.50 - 4.00,No,No,No,No,No
-8/7/2020 16:21,Female,20,BENL,Year 3,3.00 - 3.49,No,Yes,Yes,No,No
-8/7/2020 16:22,Female,18,BCS,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 16:34,Female,23,Benl,year 1,3.00 - 3.49,No,No,No,No,No
-8/7/2020 16:34,Female,18,IT,Year 3,3.00 - 3.49,No,No,No,Yes,No
-8/7/2020 16:53,Female,19,BCS,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 17:05,Female,18,CTS,Year 1,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 17:37,Female,24,engin,year 1,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 17:46,Female,24,Engine,year 1,3.50 - 4.00,No,No,No,No,No
-8/7/2020 17:50,Female,23,Econs,year 1,3.50 - 4.00,No,Yes,Yes,No,No
-8/7/2020 18:10,Female,18,KOE,Year 3,3.00 - 3.49,No,No,Yes,No,No
-8/7/2020 18:11,Male,19,MHSC,Year 3,3.00 - 3.49,Yes,Yes,No,Yes,No
-8/7/2020 19:05,Female,18,Malcom,year 1,3.50 - 4.00,No,Yes,No,No,No
-8/7/2020 19:32,Female,24,Kop,year 4,3.00 - 3.49,No,No,Yes,No,No
-8/7/2020 20:36,Female,24,Biomedical science,year 1,3.00 - 3.49,No,No,No,No,No
-8/7/2020 21:21,Female,18,Laws,Year 3,3.50 - 4.00,No,No,No,Yes,No
-8/7/2020 22:35,Female,19,BIT,Year 3,3.00 - 3.49,Yes,Yes,No,No,No
-9/7/2020 6:57,Male,18,Biomedical science,year 1,0 - 1.99,No,No,No,No,No
-9/7/2020 11:43,Male,24,BIT,Year 3,3.50 - 4.00,No,No,Yes,No,No
-9/7/2020 11:57,Female,24,KOE,year 1,3.50 - 4.00,No,No,Yes,Yes,No
-9/7/2020 13:15,Female,23,Engineering,year 1,3.00 - 3.49,No,Yes,No,No,No
-9/7/2020 18:24,Female,18,Human Sciences ,Year 2,3.00 - 3.49,No,No,No,Yes,No
-13/07/2020 10:07:32,Female,19,Biotechnology,Year 3,0 - 1.99,No,No,No,No,No
-13/07/2020 10:10:30,Female,18,Engineering,year 4,3.50 - 4.00,No,No,No,No,No
-13/07/2020 10:11:26,Female,24,Communication ,Year 2,3.50 - 4.00,Yes,Yes,Yes,Yes,No
-13/07/2020 10:12:18,Female,24,Diploma Nursing,year 2,3.50 - 4.00,No,No,No,No,No
-13/07/2020 10:12:26,Female,19,Engineering,year 1,3.00 - 3.49,No,Yes,Yes,No,No
-13/07/2020 10:12:28,Female,19,Pendidikan Islam ,Year 2,3.00 - 3.49,No,No,No,No,No
-13/07/2020 10:14:46,Male,23,Radiography,year 1,3.00 - 3.49,No,No,No,No,No
-13/07/2020 10:33:47,Female,18,psychology,year 1,3.50 - 4.00,No,Yes,Yes,No,Yes
-13/07/2020 10:34:08,Female,19,Fiqh fatwa ,Year 3,3.00 - 3.49,No,No,No,No,No
-13/07/2020 11:46:13,Female,18,psychology,year 1,3.50 - 4.00,No,Yes,Yes,Yes,No
-13/07/2020 11:49:02,Male,24,BIT,year 1,3.00 - 3.49,No,No,Yes,No,No
-13/07/2020 11:54:58,Male,24,Engineering,Year 2,2.00 - 2.49,No,No,No,Yes,No
-13/07/2020 13:57:11,Female,23,DIPLOMA TESL,Year 3,3.50 - 4.00,No,No,No,Yes,No
-13/07/2020 14:38:12,Male,18,Koe,Year 2,3.00 - 3.49,No,No,Yes,No,No
-13/07/2020 14:48:05,Female,19,KOE,year 2,3.00 - 3.49,Yes,Yes,No,No,No
-13/07/2020 16:15:13,Female,18,BENL,year 1,3.00 - 3.49,No,Yes,No,No,No
-13/07/2020 17:30:44,Female,24,Fiqh,Year 3,0 - 1.99,No,No,No,Yes,No
-13/07/2020 19:08:32,Female,18,Islamic Education,year 1,3.50 - 4.00,No,No,No,No,No
-13/07/2020 19:56:49,Female,21,BCS,year 1,3.50 - 4.00,No,No,Yes,No,No
-13/07/2020 21:21:42,Male,18,Engineering,Year 2,3.00 - 3.49,No,Yes,Yes,No,No
-13/07/2020 21:22:56,Female,19,Nursing ,Year 3,3.50 - 4.00,Yes,Yes,No,Yes,No
-13/07/2020 21:23:57,Female,23,Pendidikan Islam,year 4,3.50 - 4.00,No,No,No,No,No
-18/07/2020 20:16:21,Male,20,Biomedical science,Year 2,3.00 - 3.49,No,No,No,No,No
+2024-01-01 00:00:00,Male,18,Engineering,Year 1,2.3378701261443293,Single,Yes,Yes,No,Yes
+2024-01-01 01:00:00,Female,18,Arts,Year 4,2.5571806780639172,Single,No,Yes,No,No
+2024-01-01 02:00:00,Male,20,Arts,Year 2,2.3540209685534936,Single,Yes,No,No,Yes
+2024-01-01 03:00:00,Male,23,Business,Year 3,2.177405067514111,Single,Yes,Yes,No,No
+2024-01-01 04:00:00,Male,19,Science,Year 3,2.2412717422012016,Single,Yes,No,Yes,Yes
+2024-01-01 05:00:00,Female,22,Science,Year 2,2.9215575360654515,Single,Yes,No,Yes,No
+2024-01-01 06:00:00,Male,21,Science,Year 2,2.412667436811585,Single,No,Yes,No,No
+2024-01-01 07:00:00,Male,19,Arts,Year 3,2.728539722096151,Single,Yes,No,Yes,No
+2024-01-01 08:00:00,Male,25,Arts,Year 3,3.006834541709714,Single,Yes,No,No,No
+2024-01-01 09:00:00,Female,23,Arts,Year 2,3.3807896572587306,Single,No,No,Yes,No
+2024-01-01 10:00:00,Male,25,Engineering,Year 3,2.078624279682198,Single,Yes,No,No,No
+2024-01-01 11:00:00,Male,24,Business,Year 1,3.5988207978180853,Single,Yes,Yes,No,No
+2024-01-01 12:00:00,Male,21,Arts,Year 1,3.2558007789818157,Single,No,No,Yes,No
+2024-01-01 13:00:00,Male,24,Business,Year 2,2.163518063897744,Single,Yes,No,Yes,No
+2024-01-01 14:00:00,Female,20,Business,Year 4,3.7471572482135542,Single,No,No,No,No
+2024-01-01 15:00:00,Male,25,Science,Year 2,3.8417448010636264,Single,No,Yes,No,No
+2024-01-01 16:00:00,Female,20,Engineering,Year 2,2.1221559197097273,Single,No,No,Yes,Yes
+2024-01-01 17:00:00,Female,18,Arts,Year 4,2.5537552962944075,Married,No,Yes,Yes,No
+2024-01-01 18:00:00,Female,24,Science,Year 4,3.6124025595861227,Single,Yes,Yes,No,Yes
+2024-01-01 19:00:00,Male,23,Science,Year 4,3.4965193807673165,Single,No,No,Yes,No
+2024-01-01 20:00:00,Female,25,Arts,Year 1,2.3690420387127546,Single,Yes,No,No,No
+2024-01-01 21:00:00,Male,22,Business,Year 3,2.4186986466734206,Single,Yes,Yes,No,No
+2024-01-01 22:00:00,Female,21,Science,Year 1,2.740944205582764,Single,Yes,No,No,No
+2024-01-01 23:00:00,Female,19,Business,Year 3,2.9690459703820427,Single,Yes,Yes,No,No
+2024-01-02 00:00:00,Female,23,Engineering,Year 1,3.236509543060592,Single,Yes,Yes,Yes,No
+2024-01-02 01:00:00,Female,23,Business,Year 3,2.7378272791395446,Single,Yes,No,Yes,No
+2024-01-02 02:00:00,Female,20,Engineering,Year 1,2.925069432266296,Single,Yes,No,Yes,Yes
+2024-01-02 03:00:00,Female,24,Business,Year 4,3.494941876267513,Single,Yes,Yes,Yes,No
+2024-01-02 04:00:00,Female,25,Science,Year 2,2.073366405781196,Single,Yes,Yes,Yes,Yes
+2024-01-02 05:00:00,Female,25,Science,Year 1,2.5048738886880413,Single,Yes,Yes,Yes,No
+2024-01-02 06:00:00,Male,18,Engineering,Year 3,3.426699171769105,Single,No,Yes,Yes,No
+2024-01-02 07:00:00,Male,18,Arts,Year 4,3.7904136753743987,Single,No,No,No,No
+2024-01-02 08:00:00,Female,21,Engineering,Year 1,3.023354884231332,Married,No,No,Yes,No
+2024-01-02 09:00:00,Female,20,Engineering,Year 1,3.0642269705306315,Single,Yes,No,Yes,No
+2024-01-02 10:00:00,Female,23,Business,Year 4,2.214344022679552,Single,No,No,No,Yes
+2024-01-02 11:00:00,Male,25,Business,Year 1,2.8948247336469093,Single,No,No,Yes,No
+2024-01-02 12:00:00,Female,22,Engineering,Year 2,3.065234532910046,Single,No,Yes,Yes,No
+2024-01-02 13:00:00,Male,20,Science,Year 1,2.4849410072694593,Married,Yes,No,No,No
+2024-01-02 14:00:00,Male,21,Business,Year 2,2.5384864618987617,Single,Yes,No,Yes,No
+2024-01-02 15:00:00,Male,21,Arts,Year 2,2.7545683262092453,Single,Yes,No,Yes,No
+2024-01-02 16:00:00,Male,20,Business,Year 4,2.0401423955554527,Single,Yes,No,Yes,Yes
+2024-01-02 17:00:00,Male,21,Business,Year 1,2.6441583311663566,Single,No,No,No,No
+2024-01-02 18:00:00,Female,20,Arts,Year 4,2.422896013993089,Single,No,Yes,Yes,No
+2024-01-02 19:00:00,Female,19,Engineering,Year 1,2.654994704355829,Single,No,Yes,Yes,Yes
+2024-01-02 20:00:00,Female,20,Arts,Year 1,2.2395242636385024,Single,No,Yes,No,No
+2024-01-02 21:00:00,Female,24,Engineering,Year 3,3.78105456147979,Single,Yes,No,Yes,Yes
+2024-01-02 22:00:00,Female,20,Engineering,Year 1,3.1871849071080973,Single,Yes,Yes,No,Yes
+2024-01-02 23:00:00,Male,21,Engineering,Year 4,3.358204638288979,Married,Yes,Yes,No,Yes
+2024-01-03 00:00:00,Female,25,Arts,Year 2,3.578342477214677,Single,No,No,Yes,No
+2024-01-03 01:00:00,Female,24,Engineering,Year 1,2.9968843978581146,Single,Yes,No,No,No
+2024-01-03 02:00:00,Male,21,Science,Year 3,2.1738405761748476,Single,Yes,No,No,No
+2024-01-03 03:00:00,Female,18,Arts,Year 4,3.074213083637096,Single,No,Yes,Yes,No
+2024-01-03 04:00:00,Male,18,Science,Year 1,3.173682236041758,Single,No,Yes,No,No
+2024-01-03 05:00:00,Female,25,Engineering,Year 4,3.49087894836866,Married,Yes,No,No,No
+2024-01-03 06:00:00,Male,25,Business,Year 3,2.863319092459359,Single,Yes,No,Yes,No
+2024-01-03 07:00:00,Female,24,Engineering,Year 3,2.2551606055911275,Single,Yes,Yes,Yes,Yes
+2024-01-03 08:00:00,Female,19,Science,Year 4,2.5675518115974487,Single,Yes,Yes,Yes,No
+2024-01-03 09:00:00,Male,25,Science,Year 1,2.72616459279727,Single,Yes,No,No,Yes
+2024-01-03 10:00:00,Male,18,Arts,Year 2,3.2918344826632024,Single,Yes,No,Yes,No
+2024-01-03 11:00:00,Male,20,Business,Year 3,3.1415566093378238,Single,No,Yes,No,No
+2024-01-03 12:00:00,Male,21,Arts,Year 1,2.7121934517956925,Single,No,No,No,Yes
+2024-01-03 13:00:00,Male,18,Science,Year 1,3.9730304975859596,Single,No,Yes,No,Yes
+2024-01-03 14:00:00,Male,18,Engineering,Year 2,3.211549638713774,Single,Yes,Yes,No,No
+2024-01-03 15:00:00,Male,19,Business,Year 3,2.474453583471989,Single,No,Yes,No,No
+2024-01-03 16:00:00,Male,24,Engineering,Year 3,2.2035649452408075,Single,Yes,Yes,No,Yes
+2024-01-03 17:00:00,Female,24,Engineering,Year 1,2.305718278368664,Single,Yes,No,No,No
+2024-01-03 18:00:00,Female,23,Business,Year 1,2.491915456769016,Single,No,No,Yes,Yes
+2024-01-03 19:00:00,Male,19,Arts,Year 2,2.321362746519111,Single,Yes,Yes,Yes,No
+2024-01-03 20:00:00,Female,20,Engineering,Year 2,2.3731340481026115,Single,Yes,Yes,No,No
+2024-01-03 21:00:00,Female,24,Science,Year 3,2.570190337387694,Single,No,Yes,No,Yes
+2024-01-03 22:00:00,Female,21,Engineering,Year 4,2.3467471905895096,Single,No,Yes,Yes,Yes
+2024-01-03 23:00:00,Female,25,Business,Year 3,3.7935308492528503,Married,No,Yes,No,Yes
+2024-01-04 00:00:00,Male,19,Business,Year 1,2.1604674913232844,Single,Yes,No,Yes,No
+2024-01-04 01:00:00,Female,25,Business,Year 3,3.0490227791405093,Single,No,No,Yes,Yes
+2024-01-04 02:00:00,Male,18,Arts,Year 4,2.8207936539793232,Single,No,No,Yes,No
+2024-01-04 03:00:00,Female,21,Engineering,Year 2,3.964757233817213,Single,Yes,No,No,Yes
+2024-01-04 04:00:00,Female,21,Arts,Year 4,2.2240778043361047,Single,No,Yes,No,No
+2024-01-04 05:00:00,Female,18,Arts,Year 4,2.7957111980914835,Single,No,Yes,Yes,No
+2024-01-04 06:00:00,Male,19,Business,Year 4,3.9389408665507375,Single,No,Yes,Yes,No
+2024-01-04 07:00:00,Female,18,Business,Year 2,3.7310142517879603,Single,Yes,Yes,Yes,No
+2024-01-04 08:00:00,Male,25,Arts,Year 4,3.6341441418985596,Single,Yes,Yes,Yes,No
+2024-01-04 09:00:00,Female,23,Engineering,Year 4,2.5158056540898794,Single,Yes,No,Yes,No
+2024-01-04 10:00:00,Male,21,Science,Year 4,2.341775174780132,Single,Yes,Yes,No,No
+2024-01-04 11:00:00,Female,22,Arts,Year 1,3.337286439848862,Single,No,No,Yes,No
+2024-01-04 12:00:00,Male,22,Engineering,Year 4,3.858751978255172,Single,Yes,No,No,Yes
+2024-01-04 13:00:00,Male,25,Business,Year 2,3.11352578602786,Single,Yes,No,Yes,No
+2024-01-04 14:00:00,Female,20,Business,Year 4,3.1432253789397997,Single,No,No,No,No
+2024-01-04 15:00:00,Male,24,Engineering,Year 4,2.5599581873205683,Single,No,Yes,No,Yes
+2024-01-04 16:00:00,Female,18,Science,Year 2,3.538985866383874,Single,No,No,No,No
+2024-01-04 17:00:00,Female,18,Business,Year 4,2.3740874971150467,Single,Yes,No,No,No
+2024-01-04 18:00:00,Female,20,Business,Year 2,2.647358472808487,Single,Yes,No,No,No
+2024-01-04 19:00:00,Female,20,Business,Year 4,2.850872877232834,Single,Yes,Yes,No,No
+2024-01-04 20:00:00,Female,25,Engineering,Year 2,3.01522075736891,Single,No,Yes,Yes,No
+2024-01-04 21:00:00,Female,25,Arts,Year 4,2.4848194648301605,Single,No,Yes,No,Yes
+2024-01-04 22:00:00,Female,20,Business,Year 4,2.229673649478407,Single,Yes,No,Yes,No
+2024-01-04 23:00:00,Female,21,Arts,Year 1,3.221240084883265,Single,No,No,No,No
+2024-01-05 00:00:00,Female,25,Science,Year 1,2.5772611064805115,Married,No,Yes,No,Yes
+2024-01-05 01:00:00,Female,23,Business,Year 4,3.1624764428452243,Single,No,No,Yes,Yes
+2024-01-05 02:00:00,Female,25,Business,Year 4,2.308725430548405,Married,Yes,Yes,No,No
+2024-01-05 03:00:00,Male,18,Science,Year 3,2.9622802037096347,Single,No,Yes,Yes,Yes
+2024-01-05 04:00:00,Male,25,Business,Year 2,3.0651788651031717,Single,No,No,Yes,No
+2024-01-05 05:00:00,Female,21,Arts,Year 3,2.103647073644854,Single,Yes,No,Yes,Yes
+2024-01-05 06:00:00,Female,20,Engineering,Year 1,2.6732085563878414,Single,Yes,No,Yes,Yes
+2024-01-05 07:00:00,Female,18,Arts,Year 1,2.2688293538779485,Single,No,No,No,Yes
+2024-01-05 08:00:00,Female,25,Engineering,Year 1,2.1267499409455355,Single,No,Yes,No,No
+2024-01-05 09:00:00,Female,21,Engineering,Year 1,3.9799204647798905,Single,Yes,Yes,Yes,No
+2024-01-05 10:00:00,Female,23,Arts,Year 4,2.644707689949446,Single,Yes,Yes,No,No
+2024-01-05 11:00:00,Female,25,Arts,Year 1,3.6197488917092695,Single,No,Yes,No,No
+2024-01-05 12:00:00,Female,21,Arts,Year 4,2.5092813095275277,Single,No,Yes,Yes,Yes
+2024-01-05 13:00:00,Male,23,Arts,Year 4,3.3630054444478583,Single,No,No,No,No
+2024-01-05 14:00:00,Female,20,Science,Year 1,3.520455719779373,Single,No,Yes,Yes,No
+2024-01-05 15:00:00,Male,25,Business,Year 1,3.1912774812156885,Married,Yes,Yes,Yes,No
+2024-01-05 16:00:00,Female,23,Engineering,Year 2,2.9431523771003167,Married,No,Yes,No,Yes
+2024-01-05 17:00:00,Female,18,Arts,Year 3,2.823681828294537,Single,No,No,No,No
+2024-01-05 18:00:00,Male,20,Arts,Year 1,2.6977365330859904,Single,Yes,No,No,Yes
+2024-01-05 19:00:00,Female,18,Arts,Year 2,3.8590582884956515,Married,No,No,Yes,No
+2024-01-05 20:00:00,Male,22,Science,Year 2,3.6612388155754583,Single,Yes,No,Yes,No
+2024-01-05 21:00:00,Female,19,Arts,Year 3,3.930053821333025,Single,No,Yes,No,No
+2024-01-05 22:00:00,Female,25,Arts,Year 4,2.2485944469710892,Married,No,Yes,No,No
+2024-01-05 23:00:00,Male,23,Arts,Year 1,3.4617349504072887,Single,Yes,No,No,No
+2024-01-06 00:00:00,Female,19,Business,Year 3,3.8766809136420757,Single,Yes,No,No,No
+2024-01-06 01:00:00,Male,19,Science,Year 1,2.3624661323313205,Single,No,Yes,Yes,No
+2024-01-06 02:00:00,Female,23,Arts,Year 2,2.132992534733555,Married,No,Yes,No,No
+2024-01-06 03:00:00,Male,20,Engineering,Year 2,3.482241298580118,Married,No,No,Yes,No
+2024-01-06 04:00:00,Male,25,Engineering,Year 4,3.148946226359824,Married,Yes,No,Yes,No
+2024-01-06 05:00:00,Female,22,Engineering,Year 2,3.683657553516544,Single,No,No,No,No
+2024-01-06 06:00:00,Female,18,Science,Year 2,2.279544753252579,Single,Yes,No,No,No
+2024-01-06 07:00:00,Male,21,Science,Year 3,3.5905346237197806,Single,Yes,Yes,No,No
+2024-01-06 08:00:00,Female,18,Engineering,Year 1,2.403254640095489,Single,No,Yes,Yes,Yes
+2024-01-06 09:00:00,Female,21,Arts,Year 1,2.327311885731409,Single,Yes,Yes,No,No
+2024-01-06 10:00:00,Female,18,Science,Year 3,2.328531595861986,Single,No,No,No,Yes
+2024-01-06 11:00:00,Male,23,Engineering,Year 4,3.629149440462764,Single,No,No,Yes,No
+2024-01-06 12:00:00,Male,22,Engineering,Year 1,3.3303944413924,Single,No,Yes,No,No
+2024-01-06 13:00:00,Male,25,Arts,Year 2,3.0461308495382386,Single,No,Yes,Yes,No
+2024-01-06 14:00:00,Male,21,Business,Year 1,2.7176609682470048,Single,No,Yes,No,No
+2024-01-06 15:00:00,Male,25,Science,Year 2,3.7544010816262166,Single,Yes,Yes,Yes,No
+2024-01-06 16:00:00,Male,25,Arts,Year 4,2.7848902148452708,Single,Yes,No,No,No
+2024-01-06 17:00:00,Male,25,Engineering,Year 3,3.633198878943154,Single,No,Yes,No,No
+2024-01-06 18:00:00,Male,24,Engineering,Year 1,2.8782698171404366,Single,No,Yes,Yes,Yes
+2024-01-06 19:00:00,Male,20,Arts,Year 3,2.753888858849815,Single,Yes,Yes,Yes,No
+2024-01-06 20:00:00,Female,18,Science,Year 1,2.9253595713392126,Single,Yes,Yes,No,Yes
+2024-01-06 21:00:00,Male,25,Business,Year 2,2.602755748328284,Single,Yes,Yes,Yes,No
+2024-01-06 22:00:00,Female,18,Business,Year 3,3.4952187603525022,Single,Yes,Yes,Yes,No
+2024-01-06 23:00:00,Female,25,Engineering,Year 1,3.0054407801849585,Single,No,Yes,Yes,No
+2024-01-07 00:00:00,Female,21,Science,Year 2,2.4644253902936346,Single,No,No,Yes,Yes
+2024-01-07 01:00:00,Male,20,Business,Year 3,3.799149146549137,Single,Yes,No,No,Yes
+2024-01-07 02:00:00,Male,20,Science,Year 3,2.767782442746423,Single,No,No,No,No
+2024-01-07 03:00:00,Male,23,Science,Year 1,3.087105722227977,Single,Yes,No,Yes,Yes
+2024-01-07 04:00:00,Male,24,Engineering,Year 1,3.8129442219290937,Single,No,Yes,Yes,Yes
+2024-01-07 05:00:00,Female,23,Business,Year 1,3.248475991827984,Single,Yes,No,Yes,Yes
+2024-01-07 06:00:00,Male,23,Arts,Year 2,2.2337960814167284,Single,No,No,Yes,No
+2024-01-07 07:00:00,Male,23,Engineering,Year 1,3.87966424722695,Single,Yes,Yes,No,No
+2024-01-07 08:00:00,Male,23,Business,Year 3,3.2554161061428357,Married,Yes,Yes,No,No
+2024-01-07 09:00:00,Male,23,Business,Year 3,2.6698112293141723,Single,No,No,Yes,Yes
+2024-01-07 10:00:00,Male,22,Business,Year 1,2.2785441453267747,Married,Yes,No,Yes,No
+2024-01-07 11:00:00,Female,20,Business,Year 1,3.5880503785405917,Single,No,Yes,Yes,No
+2024-01-07 12:00:00,Male,23,Business,Year 4,3.240145511857027,Single,No,No,No,No
+2024-01-07 13:00:00,Female,25,Science,Year 3,3.0669221839526433,Single,Yes,Yes,Yes,Yes
+2024-01-07 14:00:00,Male,20,Engineering,Year 2,3.7877851661019153,Single,No,Yes,No,Yes
+2024-01-07 15:00:00,Female,20,Science,Year 4,3.5771944224490615,Single,No,Yes,Yes,Yes
+2024-01-07 16:00:00,Male,19,Arts,Year 1,2.3033497594655024,Single,No,Yes,No,No
+2024-01-07 17:00:00,Male,22,Business,Year 1,2.6234441355910967,Married,No,No,Yes,No
+2024-01-07 18:00:00,Female,23,Engineering,Year 3,2.4969782796289315,Single,No,Yes,No,Yes
+2024-01-07 19:00:00,Female,18,Business,Year 1,3.487892585145354,Single,Yes,Yes,Yes,Yes
+2024-01-07 20:00:00,Female,21,Engineering,Year 2,2.067064869471559,Single,No,No,Yes,Yes
+2024-01-07 21:00:00,Male,24,Science,Year 3,3.139779369742633,Single,No,Yes,Yes,No
+2024-01-07 22:00:00,Female,25,Engineering,Year 1,3.524917371481381,Single,No,No,No,Yes
+2024-01-07 23:00:00,Male,18,Arts,Year 3,3.7535312735234987,Single,No,No,Yes,No
+2024-01-08 00:00:00,Male,22,Arts,Year 1,2.6841634974318147,Single,No,No,No,No
+2024-01-08 01:00:00,Female,21,Engineering,Year 1,3.6425146093440257,Single,Yes,Yes,No,No
+2024-01-08 02:00:00,Female,22,Engineering,Year 1,2.2212634739104145,Single,No,No,Yes,Yes
+2024-01-08 03:00:00,Male,25,Engineering,Year 2,3.692904583469036,Single,Yes,No,Yes,Yes
+2024-01-08 04:00:00,Male,20,Engineering,Year 2,2.254977324663965,Single,Yes,Yes,Yes,No
+2024-01-08 05:00:00,Female,21,Arts,Year 3,2.7945745811207345,Single,Yes,No,No,No
+2024-01-08 06:00:00,Female,20,Business,Year 1,3.5945907315591072,Married,Yes,No,Yes,No
+2024-01-08 07:00:00,Female,25,Engineering,Year 1,2.2998348546975476,Single,No,No,No,No
+2024-01-08 08:00:00,Male,18,Engineering,Year 2,2.4585027904652828,Single,Yes,No,No,Yes
+2024-01-08 09:00:00,Male,25,Arts,Year 1,3.4445051367861326,Single,Yes,No,Yes,No
+2024-01-08 10:00:00,Male,18,Arts,Year 2,3.4400730730921487,Single,No,Yes,Yes,No
+2024-01-08 11:00:00,Male,21,Science,Year 1,3.2822952657705944,Married,No,No,Yes,Yes
+2024-01-08 12:00:00,Male,21,Engineering,Year 3,3.3878968889342,Single,No,No,Yes,No
+2024-01-08 13:00:00,Male,23,Science,Year 1,3.0854488866951923,Single,Yes,Yes,Yes,No
+2024-01-08 14:00:00,Female,22,Arts,Year 1,2.5035981178139055,Single,No,Yes,Yes,No
+2024-01-08 15:00:00,Male,23,Arts,Year 4,2.691391987007839,Single,No,Yes,No,No
+2024-01-08 16:00:00,Male,22,Business,Year 2,2.3631954336028516,Married,Yes,No,No,No
+2024-01-08 17:00:00,Male,23,Engineering,Year 1,3.8169011226672565,Single,No,Yes,No,No
+2024-01-08 18:00:00,Female,20,Science,Year 1,3.166783589532241,Single,No,No,Yes,Yes
+2024-01-08 19:00:00,Male,21,Arts,Year 4,2.80170283352728,Single,No,No,No,No
+2024-01-08 20:00:00,Male,18,Arts,Year 4,2.924011607288265,Married,No,Yes,No,No
+2024-01-08 21:00:00,Female,22,Science,Year 2,3.8945666792236304,Single,Yes,Yes,No,Yes
+2024-01-08 22:00:00,Male,25,Business,Year 4,2.3067028062321606,Married,No,No,No,No
+2024-01-08 23:00:00,Male,22,Arts,Year 3,3.1724596640335943,Single,No,Yes,No,No
+2024-01-09 00:00:00,Male,18,Engineering,Year 4,3.011777357768932,Single,Yes,No,Yes,No
+2024-01-09 01:00:00,Male,23,Arts,Year 3,3.222908470869296,Single,No,Yes,Yes,No
+2024-01-09 02:00:00,Male,22,Engineering,Year 2,2.036220367641681,Single,Yes,Yes,No,No
+2024-01-09 03:00:00,Female,24,Science,Year 2,3.744247817888303,Single,No,Yes,No,Yes
+2024-01-09 04:00:00,Female,20,Engineering,Year 2,3.864236564967225,Single,Yes,No,No,Yes
+2024-01-09 05:00:00,Female,21,Science,Year 2,3.130266367178418,Single,Yes,Yes,Yes,Yes
+2024-01-09 06:00:00,Male,18,Engineering,Year 2,3.3933016477537845,Single,Yes,No,Yes,No
+2024-01-09 07:00:00,Male,21,Science,Year 3,3.8449987623545914,Single,Yes,No,No,No
+2024-01-09 08:00:00,Male,24,Engineering,Year 3,3.414477268626797,Single,No,No,Yes,Yes
+2024-01-09 09:00:00,Female,22,Business,Year 2,2.305078085828523,Married,Yes,No,Yes,No
+2024-01-09 10:00:00,Male,22,Engineering,Year 4,3.1525767203336263,Single,No,Yes,No,No
+2024-01-09 11:00:00,Male,25,Engineering,Year 1,3.213430092765712,Married,Yes,No,Yes,No
+2024-01-09 12:00:00,Female,24,Business,Year 2,2.848261342604772,Married,Yes,No,Yes,No
+2024-01-09 13:00:00,Male,18,Arts,Year 4,3.472888471249446,Single,Yes,Yes,No,Yes
+2024-01-09 14:00:00,Female,25,Arts,Year 1,3.8687340295380297,Single,No,No,Yes,No
+2024-01-09 15:00:00,Female,20,Engineering,Year 2,3.8511370258135527,Single,Yes,Yes,Yes,No
+2024-01-09 16:00:00,Female,25,Business,Year 2,2.901678742808264,Single,No,No,No,No
+2024-01-09 17:00:00,Male,19,Engineering,Year 3,2.2264760916815103,Single,No,Yes,Yes,No
+2024-01-09 18:00:00,Male,18,Science,Year 1,3.969682397924669,Single,No,No,Yes,No
+2024-01-09 19:00:00,Male,19,Science,Year 1,3.677796172891868,Single,No,Yes,No,No
+2024-01-09 20:00:00,Male,24,Engineering,Year 4,2.249325362406534,Single,No,No,No,Yes
+2024-01-09 21:00:00,Male,23,Arts,Year 3,3.8416837652347446,Single,No,No,No,No
+2024-01-09 22:00:00,Male,19,Arts,Year 3,3.7397927241242566,Single,No,Yes,Yes,No
+2024-01-09 23:00:00,Male,20,Engineering,Year 3,3.037676114252144,Single,No,Yes,No,No
+2024-01-10 00:00:00,Female,25,Engineering,Year 3,3.1825508714898585,Single,No,Yes,Yes,Yes
+2024-01-10 01:00:00,Male,23,Science,Year 1,2.7980054077402605,Single,Yes,Yes,No,Yes
+2024-01-10 02:00:00,Female,25,Arts,Year 1,2.1095232776440627,Single,Yes,No,Yes,Yes
+2024-01-10 03:00:00,Male,19,Engineering,Year 2,2.670394483291802,Single,Yes,No,No,No
+2024-01-10 04:00:00,Male,25,Science,Year 2,3.605706897196023,Single,Yes,Yes,No,No
+2024-01-10 05:00:00,Male,24,Arts,Year 3,2.0092640460092057,Married,Yes,No,No,Yes
+2024-01-10 06:00:00,Female,23,Business,Year 3,2.6669983433822884,Single,No,Yes,No,No
+2024-01-10 07:00:00,Female,24,Science,Year 3,2.796337387181887,Single,No,Yes,Yes,No
+2024-01-10 08:00:00,Female,19,Arts,Year 2,3.0747912058758455,Single,No,No,No,No
+2024-01-10 09:00:00,Female,24,Arts,Year 4,3.839711232825521,Single,No,No,No,No
+2024-01-10 10:00:00,Male,20,Science,Year 4,2.6926919887319225,Single,No,No,Yes,No
+2024-01-10 11:00:00,Female,19,Business,Year 2,2.6939064037924556,Single,No,No,No,No
+2024-01-10 12:00:00,Male,19,Science,Year 2,3.4750024962194965,Single,No,No,Yes,Yes
+2024-01-10 13:00:00,Male,19,Arts,Year 2,2.904435881779614,Single,Yes,No,No,No
+2024-01-10 14:00:00,Female,18,Engineering,Year 2,2.449209645879964,Single,Yes,No,No,No
+2024-01-10 15:00:00,Female,25,Engineering,Year 2,2.904879032265387,Single,Yes,Yes,No,No
+2024-01-10 16:00:00,Female,18,Science,Year 2,2.2817140407595997,Single,Yes,Yes,Yes,No
+2024-01-10 17:00:00,Female,18,Arts,Year 3,2.3527739730124466,Single,No,Yes,No,No
+2024-01-10 18:00:00,Female,20,Engineering,Year 3,2.9967355454789595,Single,No,Yes,No,Yes
+2024-01-10 19:00:00,Female,23,Arts,Year 3,2.837850899009096,Single,No,Yes,No,No
+2024-01-10 20:00:00,Female,25,Science,Year 3,3.8296918021362,Single,Yes,No,Yes,Yes
+2024-01-10 21:00:00,Female,24,Engineering,Year 2,2.7247877982332662,Single,No,Yes,Yes,Yes
+2024-01-10 22:00:00,Male,22,Arts,Year 4,3.161176700556087,Single,No,Yes,No,No
+2024-01-10 23:00:00,Female,19,Engineering,Year 1,3.2645285758390608,Single,No,Yes,Yes,No
+2024-01-11 00:00:00,Female,24,Science,Year 2,2.026188913176667,Single,Yes,Yes,No,Yes
+2024-01-11 01:00:00,Male,19,Arts,Year 1,3.327074744033421,Single,No,Yes,No,No
+2024-01-11 02:00:00,Female,20,Engineering,Year 4,2.3560719337395026,Single,Yes,Yes,No,No
+2024-01-11 03:00:00,Male,19,Science,Year 3,3.92214063493891,Single,Yes,Yes,No,Yes
+2024-01-11 04:00:00,Male,18,Engineering,Year 4,2.297325455506226,Single,Yes,No,No,No
+2024-01-11 05:00:00,Female,25,Engineering,Year 2,2.8292482474540472,Single,Yes,No,No,No
+2024-01-11 06:00:00,Male,22,Business,Year 3,2.1706993361572877,Single,No,Yes,No,No
+2024-01-11 07:00:00,Male,21,Business,Year 2,3.9937485036918945,Single,Yes,No,Yes,Yes
+2024-01-11 08:00:00,Male,19,Science,Year 3,3.004390020662485,Single,Yes,No,Yes,No
+2024-01-11 09:00:00,Male,24,Business,Year 1,3.190770034640088,Single,No,No,Yes,No
+2024-01-11 10:00:00,Female,18,Science,Year 1,2.134152954776855,Single,No,No,Yes,No
+2024-01-11 11:00:00,Male,21,Business,Year 1,3.4999209407983556,Single,Yes,Yes,Yes,Yes
+2024-01-11 12:00:00,Female,22,Engineering,Year 4,2.4198111861911715,Single,No,No,Yes,No
+2024-01-11 13:00:00,Male,21,Science,Year 2,3.7961085788814275,Single,Yes,No,Yes,Yes
+2024-01-11 14:00:00,Male,18,Science,Year 4,2.4102792809640143,Single,Yes,No,No,No
+2024-01-11 15:00:00,Male,25,Engineering,Year 1,2.381375441327333,Single,Yes,Yes,No,Yes
+2024-01-11 16:00:00,Male,25,Science,Year 2,2.07309933569619,Single,Yes,Yes,No,No
+2024-01-11 17:00:00,Female,23,Science,Year 1,2.9441338902199985,Single,No,Yes,No,No
+2024-01-11 18:00:00,Female,25,Business,Year 4,3.129682266525233,Single,Yes,Yes,Yes,No
+2024-01-11 19:00:00,Male,23,Science,Year 4,2.1314172788567047,Single,No,Yes,Yes,Yes
+2024-01-11 20:00:00,Male,21,Arts,Year 4,3.551055233390021,Single,No,Yes,No,No
+2024-01-11 21:00:00,Female,20,Engineering,Year 1,2.9065776694960554,Single,No,Yes,No,No
+2024-01-11 22:00:00,Male,24,Business,Year 2,3.0487805386551603,Single,No,No,Yes,No
+2024-01-11 23:00:00,Male,24,Business,Year 2,2.881525493876456,Single,Yes,No,No,No
+2024-01-12 00:00:00,Male,21,Arts,Year 1,2.801526121750652,Single,No,No,No,No
+2024-01-12 01:00:00,Female,19,Engineering,Year 2,3.1192806626164358,Single,Yes,Yes,No,No
+2024-01-12 02:00:00,Female,19,Engineering,Year 1,2.310480491861425,Single,No,Yes,No,No
+2024-01-12 03:00:00,Female,25,Business,Year 2,2.3638562609905422,Single,No,Yes,Yes,No
+2024-01-12 04:00:00,Male,24,Science,Year 3,3.7235712420270346,Single,Yes,Yes,No,No
+2024-01-12 05:00:00,Male,24,Business,Year 3,3.8922309242672655,Single,Yes,Yes,No,No
+2024-01-12 06:00:00,Female,23,Engineering,Year 4,2.746618632559506,Single,Yes,No,Yes,No
+2024-01-12 07:00:00,Female,20,Arts,Year 3,2.5414893462871078,Married,No,No,Yes,Yes
+2024-01-12 08:00:00,Female,18,Business,Year 3,3.2879990864780315,Single,No,Yes,No,No
+2024-01-12 09:00:00,Female,19,Engineering,Year 3,2.817468342196193,Single,Yes,Yes,Yes,No
+2024-01-12 10:00:00,Male,24,Business,Year 1,2.0507727113206897,Single,Yes,Yes,No,No
+2024-01-12 11:00:00,Female,23,Science,Year 3,2.3123051947323807,Single,Yes,Yes,No,Yes
+2024-01-12 12:00:00,Male,22,Business,Year 3,3.431944457694795,Single,Yes,No,Yes,No
+2024-01-12 13:00:00,Female,23,Business,Year 4,3.3178478838203027,Single,No,Yes,No,No
+2024-01-12 14:00:00,Male,19,Engineering,Year 3,2.054191985006967,Single,Yes,Yes,No,No
+2024-01-12 15:00:00,Female,19,Engineering,Year 3,2.4439443238658987,Single,Yes,Yes,No,Yes
+2024-01-12 16:00:00,Female,23,Engineering,Year 2,2.462149593176143,Married,Yes,Yes,No,No
+2024-01-12 17:00:00,Female,18,Business,Year 4,3.343785487197457,Single,Yes,No,Yes,No
+2024-01-12 18:00:00,Female,21,Science,Year 4,2.039421075508728,Single,No,Yes,Yes,No
+2024-01-12 19:00:00,Male,19,Arts,Year 4,2.208217163969148,Married,Yes,Yes,No,No
+2024-01-12 20:00:00,Female,23,Arts,Year 4,3.599832170746379,Single,No,No,Yes,No
+2024-01-12 21:00:00,Male,24,Engineering,Year 4,2.3570893241086672,Married,Yes,No,No,No
+2024-01-12 22:00:00,Male,23,Engineering,Year 4,3.305492215703749,Single,Yes,No,No,Yes
+2024-01-12 23:00:00,Male,20,Business,Year 1,2.476365562093453,Single,No,Yes,No,No
+2024-01-13 00:00:00,Male,21,Arts,Year 3,2.1988827855186903,Single,Yes,Yes,No,No
+2024-01-13 01:00:00,Female,22,Engineering,Year 4,2.486344381998908,Single,No,No,No,Yes
+2024-01-13 02:00:00,Male,18,Science,Year 3,3.4445338637113183,Single,No,No,Yes,Yes
+2024-01-13 03:00:00,Male,25,Science,Year 3,3.7113929362125715,Single,Yes,No,No,No
+2024-01-13 04:00:00,Male,22,Engineering,Year 1,3.660439729133983,Single,No,No,Yes,No
+2024-01-13 05:00:00,Female,21,Engineering,Year 4,2.79436705923691,Single,No,No,Yes,No
+2024-01-13 06:00:00,Female,21,Arts,Year 2,3.3361702731412923,Single,No,No,No,No
+2024-01-13 07:00:00,Female,21,Arts,Year 1,2.409968590831642,Single,No,Yes,No,No
+2024-01-13 08:00:00,Female,22,Business,Year 2,2.5862954605220265,Married,No,Yes,No,No
+2024-01-13 09:00:00,Male,24,Arts,Year 3,3.7926716370422398,Married,No,Yes,No,Yes
+2024-01-13 10:00:00,Male,21,Science,Year 3,2.026003847021472,Single,No,No,No,No
+2024-01-13 11:00:00,Female,23,Science,Year 1,2.171017061708936,Single,No,No,Yes,No

@@ -1,0 +1,9 @@
+{
+    "optimal_k": 2,
+    "silhouette_score": 0.12568037737794768,
+    "inertia": 2676.019877150715,
+    "cluster_distribution": {
+        "1": 213,
+        "0": 87
+    }
+}
